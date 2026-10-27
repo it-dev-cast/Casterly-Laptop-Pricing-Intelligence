@@ -1,0 +1,640 @@
+[
+  {
+    "name": "One Grade B phone from a retail offer",
+    "synthetic": true,
+    "input_amount": "11800",
+    "tax_basis": "inclusive",
+    "quantity": 1,
+    "result": {
+      "engine_version": "pi-1.1.0",
+      "rules_name": "Casterly starter procurement policy v1",
+      "rules_hash": "c856737a786c64837fe859c117319014c1e651a3528e4cc831b9b8d39015e323",
+      "as_of": "2026-10-27T06:38:42.113241+00:00",
+      "category": "smartphone",
+      "policy_variant": null,
+      "category_label": "Smartphone",
+      "grade": "B",
+      "group_quantity": 1,
+      "observations": [
+        {
+          "id": 1,
+          "price_type": "refurb_retail",
+          "price_type_label": "Online refurbished retail selling price",
+          "match_quality": "identical",
+          "observed": "11800",
+          "currency": "INR",
+          "tax_basis": "inclusive",
+          "observed_at": "2026-10-27T06:38:42.113241+00:00",
+          "research_mode": null,
+          "source_timestamp": null,
+          "source": "synthetic-example",
+          "url": null,
+          "title": null,
+          "included": true,
+          "exclusion": null,
+          "ex_gst": "10000.00",
+          "factor": "0.70",
+          "converted": "7000.00",
+          "weight": 0.7,
+          "stale": false,
+          "age_days": 0.0
+        }
+      ],
+      "research_methods": [
+        "verified_record"
+      ],
+      "status": "priced",
+      "benchmark": "7000.00",
+      "recommended_unit": "6300.00",
+      "opening_unit": "5950.00",
+      "max_unit": null,
+      "resale_unit": null,
+      "margin_pct": null,
+      "confidence": "High",
+      "confidence_score": 87,
+      "confidence_parts": [
+        {
+          "label": "Exact SKU / configuration match",
+          "points": 25
+        },
+        {
+          "label": "Independent sources (1)",
+          "points": 7
+        },
+        {
+          "label": "Source reliability",
+          "points": 10
+        },
+        {
+          "label": "Freshness (median age 0 d)",
+          "points": 15
+        },
+        {
+          "label": "Price agreement (IQR/median 0.00)",
+          "points": 15
+        },
+        {
+          "label": "Specification completeness",
+          "points": 10
+        },
+        {
+          "label": "Condition certainty",
+          "points": 5
+        }
+      ],
+      "steps": [
+        {
+          "step": "benchmark",
+          "label": "Market benchmark (weighted median of converted evidence)",
+          "value": "7000.00",
+          "detail": "1 observation(s); P25 7000.00 \u00b7 P75 7000.00"
+        },
+        {
+          "step": "condition",
+          "label": "Condition / grade adjustment",
+          "pct": "10",
+          "detail": "grade B: 10%"
+        },
+        {
+          "step": "quantity",
+          "label": "Quantity-band adjustment",
+          "pct": "0",
+          "detail": "1 units \u2192 band 1\u20139: 0%"
+        },
+        {
+          "step": "risk",
+          "label": "Risk adjustments",
+          "pct": "0.00",
+          "detail": "none applied"
+        },
+        {
+          "step": "rounding",
+          "label": "Rounding (down to \u20b950)",
+          "value": "6300.00",
+          "detail": "before rounding 6300.00"
+        }
+      ],
+      "dispersion": 0.0,
+      "assumptions": [
+        "Initial assumptions dated 27-Oct-2026; review against actual transactions. Grade A is the tested reference. Source conversion covers resale spread, warranty and holding risk; specific condition/accessory risks apply separately only when not already reflected in evidence."
+      ],
+      "flags": [],
+      "observation_ids": [
+        1
+      ],
+      "message": "Priced from dated verified evidence; inspect source dates and research methods"
+    }
+  },
+  {
+    "name": "862 Grade B phones from the same retail offer",
+    "synthetic": true,
+    "input_amount": "11800",
+    "tax_basis": "inclusive",
+    "quantity": 862,
+    "result": {
+      "engine_version": "pi-1.1.0",
+      "rules_name": "Casterly starter procurement policy v1",
+      "rules_hash": "c856737a786c64837fe859c117319014c1e651a3528e4cc831b9b8d39015e323",
+      "as_of": "2026-10-27T06:38:42.113241+00:00",
+      "category": "smartphone",
+      "policy_variant": null,
+      "category_label": "Smartphone",
+      "grade": "B",
+      "group_quantity": 862,
+      "observations": [
+        {
+          "id": 1,
+          "price_type": "refurb_retail",
+          "price_type_label": "Online refurbished retail selling price",
+          "match_quality": "identical",
+          "observed": "11800",
+          "currency": "INR",
+          "tax_basis": "inclusive",
+          "observed_at": "2026-10-27T06:38:42.113241+00:00",
+          "research_mode": null,
+          "source_timestamp": null,
+          "source": "synthetic-example",
+          "url": null,
+          "title": null,
+          "included": true,
+          "exclusion": null,
+          "ex_gst": "10000.00",
+          "factor": "0.70",
+          "converted": "7000.00",
+          "weight": 0.7,
+          "stale": false,
+          "age_days": 0.0
+        }
+      ],
+      "research_methods": [
+        "verified_record"
+      ],
+      "status": "priced",
+      "benchmark": "7000.00",
+      "recommended_unit": "5750.00",
+      "opening_unit": "5450.00",
+      "max_unit": null,
+      "resale_unit": null,
+      "margin_pct": null,
+      "confidence": "High",
+      "confidence_score": 87,
+      "confidence_parts": [
+        {
+          "label": "Exact SKU / configuration match",
+          "points": 25
+        },
+        {
+          "label": "Independent sources (1)",
+          "points": 7
+        },
+        {
+          "label": "Source reliability",
+          "points": 10
+        },
+        {
+          "label": "Freshness (median age 0 d)",
+          "points": 15
+        },
+        {
+          "label": "Price agreement (IQR/median 0.00)",
+          "points": 15
+        },
+        {
+          "label": "Specification completeness",
+          "points": 10
+        },
+        {
+          "label": "Condition certainty",
+          "points": 5
+        }
+      ],
+      "steps": [
+        {
+          "step": "benchmark",
+          "label": "Market benchmark (weighted median of converted evidence)",
+          "value": "7000.00",
+          "detail": "1 observation(s); P25 7000.00 \u00b7 P75 7000.00"
+        },
+        {
+          "step": "condition",
+          "label": "Condition / grade adjustment",
+          "pct": "10",
+          "detail": "grade B: 10%"
+        },
+        {
+          "step": "quantity",
+          "label": "Quantity-band adjustment",
+          "pct": "8",
+          "detail": "862 units \u2192 band 500\u2013\u221e: 8%"
+        },
+        {
+          "step": "risk",
+          "label": "Risk adjustments",
+          "pct": "0.00",
+          "detail": "none applied"
+        },
+        {
+          "step": "rounding",
+          "label": "Rounding (down to \u20b950)",
+          "value": "5750.00",
+          "detail": "before rounding 5796.00"
+        }
+      ],
+      "dispersion": 0.0,
+      "assumptions": [
+        "Initial assumptions dated 27-Oct-2026; review against actual transactions. Grade A is the tested reference. Source conversion covers resale spread, warranty and holding risk; specific condition/accessory risks apply separately only when not already reflected in evidence."
+      ],
+      "flags": [
+        "large_lot"
+      ],
+      "observation_ids": [
+        1
+      ],
+      "message": "Priced from dated verified evidence; inspect source dates and research methods"
+    }
+  },
+  {
+    "name": "862 Grade B phones from a buyback quotation",
+    "synthetic": true,
+    "input_amount": "11800",
+    "tax_basis": "inclusive",
+    "quantity": 862,
+    "result": {
+      "engine_version": "pi-1.1.0",
+      "rules_name": "Casterly starter procurement policy v1",
+      "rules_hash": "c856737a786c64837fe859c117319014c1e651a3528e4cc831b9b8d39015e323",
+      "as_of": "2026-10-27T06:38:42.113241+00:00",
+      "category": "smartphone",
+      "policy_variant": null,
+      "category_label": "Smartphone",
+      "grade": "B",
+      "group_quantity": 862,
+      "observations": [
+        {
+          "id": 1,
+          "price_type": "buyback_quote",
+          "price_type_label": "Individual-device buyback quotation",
+          "match_quality": "identical",
+          "observed": "11800",
+          "currency": "INR",
+          "tax_basis": "inclusive",
+          "observed_at": "2026-10-27T06:38:42.113241+00:00",
+          "research_mode": null,
+          "source_timestamp": null,
+          "source": "synthetic-example",
+          "url": null,
+          "title": null,
+          "included": true,
+          "exclusion": null,
+          "ex_gst": "10000.00",
+          "factor": "1",
+          "converted": "10000.00",
+          "weight": 0.9,
+          "stale": false,
+          "age_days": 0.0
+        }
+      ],
+      "research_methods": [
+        "verified_record"
+      ],
+      "status": "priced",
+      "benchmark": "10000.00",
+      "recommended_unit": "8250.00",
+      "opening_unit": "7800.00",
+      "max_unit": null,
+      "resale_unit": null,
+      "margin_pct": null,
+      "confidence": "High",
+      "confidence_score": 87,
+      "confidence_parts": [
+        {
+          "label": "Exact SKU / configuration match",
+          "points": 25
+        },
+        {
+          "label": "Independent sources (1)",
+          "points": 7
+        },
+        {
+          "label": "Source reliability",
+          "points": 10
+        },
+        {
+          "label": "Freshness (median age 0 d)",
+          "points": 15
+        },
+        {
+          "label": "Price agreement (IQR/median 0.00)",
+          "points": 15
+        },
+        {
+          "label": "Specification completeness",
+          "points": 10
+        },
+        {
+          "label": "Condition certainty",
+          "points": 5
+        }
+      ],
+      "steps": [
+        {
+          "step": "benchmark",
+          "label": "Market benchmark (weighted median of converted evidence)",
+          "value": "10000.00",
+          "detail": "1 observation(s); P25 10000.00 \u00b7 P75 10000.00"
+        },
+        {
+          "step": "condition",
+          "label": "Condition / grade adjustment",
+          "pct": "10",
+          "detail": "grade B: 10%"
+        },
+        {
+          "step": "quantity",
+          "label": "Quantity-band adjustment",
+          "pct": "8",
+          "detail": "862 units \u2192 band 500\u2013\u221e: 8%"
+        },
+        {
+          "step": "risk",
+          "label": "Risk adjustments",
+          "pct": "0.00",
+          "detail": "none applied"
+        },
+        {
+          "step": "rounding",
+          "label": "Rounding (down to \u20b950)",
+          "value": "8250.00",
+          "detail": "before rounding 8280.00"
+        }
+      ],
+      "dispersion": 0.0,
+      "assumptions": [
+        "Initial assumptions dated 27-Oct-2026; review against actual transactions. Grade A is the tested reference. Source conversion covers resale spread, warranty and holding risk; specific condition/accessory risks apply separately only when not already reflected in evidence."
+      ],
+      "flags": [
+        "large_lot"
+      ],
+      "observation_ids": [
+        1
+      ],
+      "message": "Priced from dated verified evidence; inspect source dates and research methods"
+    }
+  },
+  {
+    "name": "Grade A DDR4 ECC module from approved catalog",
+    "synthetic": true,
+    "input_amount": "11800",
+    "tax_basis": "inclusive",
+    "quantity": 1,
+    "result": {
+      "engine_version": "pi-1.1.0",
+      "rules_name": "Casterly starter procurement policy v1",
+      "rules_hash": "c856737a786c64837fe859c117319014c1e651a3528e4cc831b9b8d39015e323",
+      "as_of": "2026-10-27T06:38:42.113241+00:00",
+      "category": "server_ram",
+      "policy_variant": "server_ram_ddr4",
+      "category_label": "DDR4 server memory",
+      "grade": "A",
+      "group_quantity": 1,
+      "observations": [
+        {
+          "id": 1,
+          "price_type": "refurb_retail",
+          "price_type_label": "Online refurbished retail selling price",
+          "match_quality": "identical",
+          "observed": "11800",
+          "currency": "INR",
+          "tax_basis": "inclusive",
+          "observed_at": "2026-10-27T06:38:42.113241+00:00",
+          "research_mode": null,
+          "source_timestamp": null,
+          "source": "synthetic-example",
+          "url": null,
+          "title": null,
+          "included": true,
+          "exclusion": null,
+          "ex_gst": "10000.00",
+          "factor": "0.65",
+          "converted": "6500.00",
+          "weight": 0.7,
+          "stale": false,
+          "age_days": 0.0
+        }
+      ],
+      "research_methods": [
+        "verified_record"
+      ],
+      "status": "priced",
+      "benchmark": "6500.00",
+      "recommended_unit": "6500.00",
+      "opening_unit": "6150.00",
+      "max_unit": null,
+      "resale_unit": null,
+      "margin_pct": null,
+      "confidence": "High",
+      "confidence_score": 87,
+      "confidence_parts": [
+        {
+          "label": "Exact SKU / configuration match",
+          "points": 25
+        },
+        {
+          "label": "Independent sources (1)",
+          "points": 7
+        },
+        {
+          "label": "Source reliability",
+          "points": 10
+        },
+        {
+          "label": "Freshness (median age 0 d)",
+          "points": 15
+        },
+        {
+          "label": "Price agreement (IQR/median 0.00)",
+          "points": 15
+        },
+        {
+          "label": "Specification completeness",
+          "points": 10
+        },
+        {
+          "label": "Condition certainty",
+          "points": 5
+        }
+      ],
+      "steps": [
+        {
+          "step": "benchmark",
+          "label": "Market benchmark (weighted median of converted evidence)",
+          "value": "6500.00",
+          "detail": "1 observation(s); P25 6500.00 \u00b7 P75 6500.00"
+        },
+        {
+          "step": "condition",
+          "label": "Condition / grade adjustment",
+          "pct": "0",
+          "detail": "grade A: 0%"
+        },
+        {
+          "step": "quantity",
+          "label": "Quantity-band adjustment",
+          "pct": "0",
+          "detail": "1 units \u2192 band 1\u20139: 0%"
+        },
+        {
+          "step": "risk",
+          "label": "Risk adjustments",
+          "pct": "0.00",
+          "detail": "none applied"
+        },
+        {
+          "step": "rounding",
+          "label": "Rounding (down to \u20b950)",
+          "value": "6500.00",
+          "detail": "before rounding 6500.00"
+        }
+      ],
+      "dispersion": 0.0,
+      "assumptions": [
+        "Initial assumptions dated 27-Oct-2026; review against actual transactions. Grade A is the tested reference. Source conversion covers resale spread, warranty and holding risk; specific condition/accessory risks apply separately only when not already reflected in evidence."
+      ],
+      "flags": [],
+      "observation_ids": [
+        1
+      ],
+      "message": "Priced from dated verified evidence; inspect source dates and research methods"
+    }
+  },
+  {
+    "name": "Recorded historical Grade B purchase valuation",
+    "synthetic": true,
+    "input_amount": "10000",
+    "tax_basis": "exclusive",
+    "quantity": 100,
+    "result": {
+      "engine_version": "pi-1.1.0",
+      "rules_name": "Casterly starter procurement policy v1",
+      "rules_hash": "c856737a786c64837fe859c117319014c1e651a3528e4cc831b9b8d39015e323",
+      "as_of": "2026-10-27T06:38:42.113241+00:00",
+      "category": "laptop",
+      "policy_variant": null,
+      "category_label": "Laptop",
+      "grade": "B",
+      "group_quantity": 100,
+      "observations": [
+        {
+          "id": 1,
+          "price_type": "historical_valuation",
+          "price_type_label": "Historical Casterly valuation (reference)",
+          "match_quality": "identical",
+          "observed": "10000",
+          "currency": "INR",
+          "tax_basis": "exclusive",
+          "observed_at": "2026-10-27T06:38:42.113241+00:00",
+          "research_mode": null,
+          "source_timestamp": null,
+          "source": "synthetic-example",
+          "url": null,
+          "title": null,
+          "included": true,
+          "exclusion": null,
+          "ex_gst": "10000.00",
+          "factor": "1",
+          "converted": "10000.00",
+          "weight": 0.5,
+          "stale": false,
+          "age_days": 0.0
+        }
+      ],
+      "research_methods": [
+        "historical"
+      ],
+      "status": "provisional",
+      "benchmark": "10000.00",
+      "recommended_unit": "10000.00",
+      "opening_unit": "9500.00",
+      "max_unit": null,
+      "resale_unit": null,
+      "margin_pct": null,
+      "confidence": "Medium",
+      "confidence_score": 87,
+      "confidence_parts": [
+        {
+          "label": "Exact SKU / configuration match",
+          "points": 25
+        },
+        {
+          "label": "Independent sources (1)",
+          "points": 7
+        },
+        {
+          "label": "Source reliability",
+          "points": 10
+        },
+        {
+          "label": "Freshness (median age 0 d)",
+          "points": 15
+        },
+        {
+          "label": "Price agreement (IQR/median 0.00)",
+          "points": 15
+        },
+        {
+          "label": "Specification completeness",
+          "points": 10
+        },
+        {
+          "label": "Condition certainty",
+          "points": 5
+        },
+        {
+          "label": "Provisional estimate cap",
+          "points": 0
+        }
+      ],
+      "steps": [
+        {
+          "step": "benchmark",
+          "label": "Market benchmark (weighted median of converted evidence)",
+          "value": "10000.00",
+          "detail": "1 observation(s); P25 10000.00 \u00b7 P75 10000.00"
+        },
+        {
+          "step": "condition",
+          "label": "Condition / grade adjustment",
+          "pct": "0",
+          "detail": "evidence already reflects the asset grade"
+        },
+        {
+          "step": "quantity",
+          "label": "Quantity-band adjustment",
+          "pct": "0",
+          "detail": "evidence is already a bulk price"
+        },
+        {
+          "step": "risk",
+          "label": "Risk adjustments",
+          "pct": "0.00",
+          "detail": "none applied"
+        },
+        {
+          "step": "rounding",
+          "label": "Rounding (down to \u20b950)",
+          "value": "10000.00",
+          "detail": "before rounding 10000.00"
+        }
+      ],
+      "dispersion": 0.0,
+      "assumptions": [
+        "Initial assumptions dated 27-Oct-2026; review against actual transactions. Grade A is the tested reference. Source conversion covers resale spread, warranty and holding risk; specific condition/accessory risks apply separately only when not already reflected in evidence."
+      ],
+      "flags": [],
+      "observation_ids": [
+        1
+      ],
+      "message": "Provisional: based only on historical Casterly valuations"
+    }
+  }
+]

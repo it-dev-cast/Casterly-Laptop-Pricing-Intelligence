@@ -1,0 +1,36 @@
+# secrets and local data
+.env
+backend/.env
+backend/data/
+*.log
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+# node
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+# confidential Casterly reference workbooks used by the regression tests (place locally; never commit)
+backend/tests/fixtures/reference/*.xlsx
+
+.env.*
+!.env.example
+references/*
+!references/.gitkeep
+
+# Local environments, databases, backups and generated validation runs
+.venv/
+venv/
+node_modules/
+.coverage
+htmlcov/
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+docs/*_TEST_RESULTS.xml
+docs/DOCKER_RUNTIME_VALIDATION.json
+docs/MARKET_LIVE_RESEARCH_RESULTS.json
+docs/B002_RUNNING_INSTANCE_FINAL_RESULT.json

@@ -1,0 +1,89 @@
+# Casterly Laptop Pricing Intelligence: local stack.
+#   cp .env.example .env   (then edit the values)
+#   docker compose up --build
+# UI: http://localhost:${CLPI_WEB_PORT:-8088}   API docs: http://localhost:${CLPI_WEB_PORT:-8088}/api/docs
+name: clpi
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: clpi
+      POSTGRES_USER: clpi
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clpi -d clpi"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    build: ./backend
+    environment: &api_env
+      CLPI_ENVIRONMENT: ${CLPI_ENVIRONMENT:-local}
+      CLPI_DATABASE_URL: postgresql+psycopg2://clpi:${POSTGRES_PASSWORD}@db:5432/clpi
+      CLPI_SECRET_KEY: ${CLPI_SECRET_KEY:?set CLPI_SECRET_KEY in .env}
+      CLPI_BOOTSTRAP_ADMIN_EMAIL: ${CLPI_BOOTSTRAP_ADMIN_EMAIL:-}
+      CLPI_BOOTSTRAP_ADMIN_PASSWORD: ${CLPI_BOOTSTRAP_ADMIN_PASSWORD:-}
+      CLPI_UPLOAD_DIR: /data/uploads
+      CLPI_MAX_UPLOAD_MB: ${CLPI_MAX_UPLOAD_MB:-10}
+      CLPI_ANTHROPIC_API_KEY: ${CLPI_ANTHROPIC_API_KEY:-}
+      CLPI_ANTHROPIC_MODEL: ${CLPI_ANTHROPIC_MODEL:-claude-opus-5-5}
+      CLPI_CORS_ORIGINS: '[]'
+      # Pricing Intelligence market research (licensed search APIs; blank = research disabled)
+      CLPI_BRAVE_API_KEY: ${CLPI_BRAVE_API_KEY:-}
+      CLPI_TAVILY_API_KEY: ${CLPI_TAVILY_API_KEY:-}
+      CLPI_RESEARCH_PROVIDER: ${CLPI_RESEARCH_PROVIDER:-}
+      # Research jobs run in the separate `worker` service below.
+      CLPI_RESEARCH_WORKER: "off"
+      CLPI_REFERENCE_DIRS: ${CLPI_REFERENCE_DIRS:-[]}
+      CLPI_APPROVED_CATALOG_PATH: ${CLPI_APPROVED_CATALOG_PATH:-}
+      CLPI_APPROVED_CATALOG_TERMS_CONFIRMED: ${CLPI_APPROVED_CATALOG_TERMS_CONFIRMED:-false}
+    volumes:
+      - uploads:/data/uploads
+      - ./references:/data/references:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  # Durable market-research job processor (Pricing Intelligence). Safe to scale: jobs are claimed with
+  # SELECT ... FOR UPDATE SKIP LOCKED and resume after restarts.
+  worker:
+    build: ./backend
+    command: ["python", "-m", "app.procurement.worker"]
+    healthcheck:
+      test: ["CMD", "python", "-m", "app.procurement.diagnostics"]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    environment: *api_env
+    volumes:
+      - uploads:/data/uploads
+      - ./references:/data/references:ro
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    ports:
+      - "${CLPI_WEB_PORT:-8088}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  uploads:
